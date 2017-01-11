@@ -223,75 +223,6 @@ function hidefocus7() {
     document.getElementById('focus7').style.display = "none";
 }
 
-function showtask1(element){
-    document.getElementById('formlist').style.display = "block";
-    document.getElementById('task1').style.display = "block";
-    document.getElementById('task2').style.display = "none";
-    document.getElementById('formhome').style.display = "none";
-    document.getElementById('formwork').style.display = "none";
-    document.getElementById('formpersonal').style.display = "none";
-    document.getElementById('formtravel').style.display = "none";
-    document.getElementById('formshopping').style.display = "none";
-    document.getElementById('formbirthday').style.display = "none";
-    document.getElementById('formcooking').style.display = "none";
-    document.getElementById('formcookinglist').style.display = "none";
-    document.getElementById('formtext').style.display = "none";
-    return false;
-}
-
-function edit1(){
-    document.getElementById('namework1').removeAttribute("disabled");
-    document.getElementById('whenwork1').removeAttribute("disabled");
-    document.getElementById('infowork1').removeAttribute("disabled");
-    document.getElementById('mailwork1').removeAttribute("disabled");
-    document.getElementById('coworkers1').removeAttribute("disabled");
-    document.getElementById('alarmwork1').removeAttribute("disabled");
-    document.getElementById('buttontask1').style.display = "block";
-}
-
-function confirmtask1(){
-    document.getElementById('namework1').disabled = true;
-    document.getElementById('whenwork1').disabled = true;
-    document.getElementById('infowork1').disabled = true;
-    document.getElementById('mailwork1').disabled = true;
-    document.getElementById('coworkers1').disabled = true;
-    document.getElementById('alarmwork1').disabled = true;
-    document.getElementById('buttontask1').style.display = "none";
-}
-
-function showtask2(element){
-    document.getElementById('formlist').style.display = "block";
-    document.getElementById('formcookinglist').style.display = "block";
-    document.getElementById('task2').style.display = "block";
-    document.getElementById('task1').style.display = "none";
-    document.getElementById('formhome').style.display = "none";
-    document.getElementById('formwork').style.display = "none";
-    document.getElementById('formpersonal').style.display = "none";
-    document.getElementById('formtravel').style.display = "none";
-    document.getElementById('formshopping').style.display = "none";
-    document.getElementById('formbirthday').style.display = "none";
-    document.getElementById('formcooking').style.display = "none";
-    document.getElementById('formtext').style.display = "none";
-    return false;
-}
-
-function edit2(){
-    document.getElementById('namecooking2').removeAttribute("disabled");
-    document.getElementById('whencooking2').removeAttribute("disabled");
-    document.getElementById('ingredientscooking2').removeAttribute("disabled");
-    document.getElementById('makecooking2').removeAttribute("disabled");
-    document.getElementById('alarmcooking2').removeAttribute("disabled");
-    document.getElementById('buttontask2').style.display = "block";
-}
-
-function confirmtask2(){
-    document.getElementById('namecooking2').disabled = true;
-    document.getElementById('whencooking2').disabled = true;
-    document.getElementById('ingredientscooking2').disabled = true;
-    document.getElementById('makecooking2').disabled = true;
-    document.getElementById('alarmcooking2').disabled = true;
-    document.getElementById('buttontask2').style.display = "none";
-}
 
 function showNotifications(element) {
     if(document.getElementById('notifications').style.display == "block") {
@@ -303,15 +234,3 @@ function showNotifications(element) {
 
     return false;
 }
-
-function showCalendar(element){
-    if(document.getElementById('calendar').style.display == "block") {
-        document.getElementById('calendar').style.display = "none";
-    }
-    else {
-        document.getElementById('calendar').style.display = "block";
-    }
-
-    return false;
-}
-

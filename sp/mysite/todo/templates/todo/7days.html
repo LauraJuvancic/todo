@@ -1,0 +1,242 @@
+{% extends 'todo/base.html' %}
+
+{% block main %}
+    <div id="dayslists">
+        <div id="first">
+            <div id="dayone"></div>
+            <div id="textone">
+                <a href="focus1" onclick="return focus1(this)"><h2> Tomorrow:</h2></a>
+                <ul>
+                    <li>
+                        {% for task in day1 %}
+                        <form method="POST" action="{% url 'todo:complete' task.id %}">
+                            {% csrf_token %}
+                            <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                            {% if task.completed == True %}checked {% endif %}>
+                        </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <div id="daytwo"></div>
+            <div id="texttwo">
+                <a href="focus2" onclick="return focus2(this)"><h2> In 2 days:</h2></a>
+                <ul>
+                    <li>
+                        {% for task in day2 %}
+                        <form method="POST" action="{% url 'todo:complete' task.id %}">
+                            {% csrf_token %}
+                            <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                            {% if task.completed == True %}checked {% endif %}>
+                        </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <div id="daythree"></div>
+            <div id="textthree">
+                <a href="focus3" onclick="return focus3(this)"><h2> In 3 days:</h2></a>
+                <ul>
+                    <li>
+                        {% for task in day3 %}
+                        <form method="POST" action="{% url 'todo:complete' task.id %}">
+                            {% csrf_token %}
+                            <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                            {% if task.completed == True %}checked {% endif %}>
+                        </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <div id="dayfour"></div>
+            <div id="textfour">
+                <a href="focus4" onclick="return focus4(this)"><h2> In 4 days:</h2></a>
+                <ul>
+                    <li>
+                        {% for task in day4 %}
+                        <form method="POST" action="{% url 'todo:complete' task.id %}">
+                            {% csrf_token %}
+                            <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                            {% if task.completed == True %}checked {% endif %}>
+                        </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="second">
+            <div id="dayfive"></div>
+            <div id="textfive">
+                <a href="focus5" onclick="return focus5(this)"><h2> In 5 days:</h2></a>
+                <ul>
+                    <li>
+                        {% for task in day5 %}
+                        <form method="POST" action="{% url 'todo:complete' task.id %}">
+                            {% csrf_token %}
+                            <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                            {% if task.completed == True %}checked {% endif %}>
+                        </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <div id="daysix"></div>
+            <div id="textsix">
+                <a href="focus6" onclick="return focus6(this)"><h2> In 6 days:</h2></a>
+                <ul>
+                    <li>
+                        {% for task in day6 %}
+                        <form method="POST" action="{% url 'todo:complete' task.id %}">
+                            {% csrf_token %}
+                            <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                            {% if task.completed == True %}checked {% endif %}>
+                        </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <div id="dayseven"></div>
+            <div id="textseven">
+                <a href="focus7" onclick="return focus7(this)"><h2> In 7 days:</h2></a>
+                <ul>
+                    <li>
+                        {% for task in day7 %}
+                        <form method="POST" action="{% url 'todo:complete' task.id %}">
+                            {% csrf_token %}
+                            <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                            {% if task.completed == True %}checked {% endif %}>
+                        </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="dim"></div>
+    <div id="focus1">
+        <button type="button" onclick="hidefocus1()">Close</button>
+        <h1>Tomorrow:</h1>
+        <ul>
+            <li>
+                {% for task in day1 %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+
+    <div id="focus2">
+        <button type="button" onclick="hidefocus2()">Close</button>
+        <h1>In 2 days:</h1>
+        <ul>
+            <li>
+                {% for task in day2 %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+
+    <div id="focus3">
+        <button type="button" onclick="hidefocus3()">Close</button>
+        <h1>In 3 days:</h1>
+        <ul>
+            <li>
+                {% for task in day3 %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+
+    <div id="focus4">
+        <button type="button" onclick="hidefocus4()">Close</button>
+        <h1>In 4 days:</h1>
+        <ul>
+            <li>
+                {% for task in day4 %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+
+    <div id="focus5">
+        <button type="button" onclick="hidefocus5()">Close</button>
+        <h1>In 5 days:</h1>
+        <ul>
+            <li>
+                {% for task in day5 %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+
+    <div id="focus6">
+        <button type="button" onclick="hidefocus6()">Close</button>
+        <h1>In 6 days:</h1>
+        <ul>
+            <li>
+                {% for task in day6 %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+
+    <div id="focus7">
+        <button type="button" onclick="hidefocus7()">Close</button>
+        <h1>In 7 days:</h1>
+        <ul>
+            <li>
+                {% for task in day7 %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+{% endblock %}

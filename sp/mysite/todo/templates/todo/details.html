@@ -1,0 +1,41 @@
+{% extends "todo/base.html" %}
+
+{% block main %}
+    {% load static %}
+    <div id="list1"></div>
+    <div id="text1">
+        <h1>In progress:</h1>
+        <ul>
+            <li>
+                {% for task in tasks_progress %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
+    <div id="list2"></div>
+    <div id="text2">
+        <h1>Completed:</h1>
+        <ul>
+            <li>
+                {% for task in tasks_completed %}
+                <form method="POST" action="{% url 'todo:complete' task.id %}">
+                    {% csrf_token %}
+                    <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                    {% if task.completed == True %}checked {% endif %}>
+                </form>
+                    <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                {% endfor %}
+            </li>
+        </ul>
+
+
+    </div>
+
+
+{% endblock %}

@@ -12,7 +12,6 @@ a{
 
 a:hover{
     text-decoration: underline;
-    color: #3cd6e6;
 }
 
 body{
@@ -118,26 +117,42 @@ body{
     position: absolute;
     z-index: 2;
     opacity: 0.4;
+
 }
 
 #things{
     margin-top: 130px;
     margin-left: 300px;
-    width: 400px;
+    width: 450px;
+    height: 500px;
     position: absolute;
     z-index: 3;
+    overflow: scroll;
 }
 
-#things ul li{
-    list-style-type: none;
+#things h1{
     text-align: center;
 }
 
+#things ul{
+    margin-top: 30px;
+}
+#things ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+}
+
+#things input{
+    float: left;
+    clear: both;
+}
+
 #things button{
-    position: absolute;
-    width: 100%;
+    width: 90%;
     height: 20px;
     margin-left: 40px;
+    margin-top: 30px;
     background-color: white;
     border: none;
     border-radius: 8px;
@@ -150,6 +165,95 @@ body{
     opacity: 1;
     color: black;
 }
+
+#things p{
+    text-align: center;
+}
+
+#things1{
+    margin-top: 130px;
+    margin-left: 325px;
+    width: 450px;
+    height:480px;
+    position: absolute;
+    z-index: 3;
+    overflow: auto;
+}
+
+#head{
+   display: table;
+
+}
+
+#head h1{
+
+}
+
+#head img{
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    display: table-cell;
+
+}
+
+#head span {
+    vertical-align: middle;
+    display: table-cell;
+    padding-right: 150px;
+
+}
+
+#things1 input, label, text{
+    float: left;
+}
+
+#things1 label{
+    padding-left: 30px;
+    padding-right: 22px;
+    clear: left;
+    width:55px;
+    text-align: right;
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+#things1 input, textarea{
+    border: none;
+    border-bottom: 2px solid black;
+    background: none;
+    margin-top: 15px;
+    width: 60%;
+}
+
+#things1 button{
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 90%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#things1 button:hover{
+    background-color: #3cd6e6;
+    opacity: 1;
+    color: black;
+}
+
+#things1 text{
+    font-size: 10px;
+}
+
+#things1 select{
+    width:70%;
+    float: left;
+    margin-top: 18px;
+}
+
+
 
 #tasks{
     margin-top: 250px;
@@ -174,160 +278,6 @@ body{
     z-index: 2;
     opacity: 0.4;
 }
-
-#task1{
-    display: none;
-    width: 470px;
-    height: 390px;
-    margin-top: 130px;
-    margin-left: 870px;
-    position: absolute;
-    z-index: 3;
-
-}
-
-#task1 h1{
-    text-align: center;
-}
-
-#task1 button{
-    margin-top: 10px;
-    margin-left: 10px;
-    background-color: white;
-    border: none;
-    border-radius: 8px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-#task1 input, label, text{
-    float: left;
-}
-
-#task1 label{
-    padding-left: 30px;
-    padding-right: 22px;
-    clear: left;
-    width:55px;
-    text-align: right;
-    padding-top: 15px;
-    font-size: 18px;
-}
-
-#task1 input, textarea{
-    border: none;
-    border-bottom: 2px solid black;
-    background: none;
-    margin-top: 15px;
-    width: 60%;
-}
-
-#task1 img{
-    width: 15px;
-    height: 15px;
-}
-
-#buttontask1{
-    display: none;
-    position: absolute;
-    z-index: 3;
-    right: 45px;
-    bottom: -70px;
-}
-
-#buttontask1 button{
-
-    width: 380px;
-    background-color: white;
-    border: none;
-    border-radius: 8px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-#buttontask1 button:hover{
-    background-color: #3cd6e6;
-    opacity: 1;
-    color: black;
-}
-
-#task2{
-    display: none;
-    width: 470px;
-    height: 390px;
-    margin-top: 130px;
-    margin-left: 870px;
-    position: absolute;
-    z-index: 3;
-
-}
-
-#task2 h1{
-    text-align: center;
-}
-
-#task2 button{
-    margin-top: 10px;
-    margin-left: 10px;
-    background-color: white;
-    border: none;
-    border-radius: 8px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-#task2 input, label, text{
-    float: left;
-}
-
-#task2 label{
-    padding-left: 30px;
-    padding-right: 22px;
-    clear: left;
-    width:55px;
-    text-align: right;
-    padding-top: 15px;
-    font-size: 18px;
-}
-
-#task2 input, textarea{
-    border: none;
-    border-bottom: 2px solid black;
-    background: none;
-    margin-top: 15px;
-    width: 60%;
-}
-
-#task2 img{
-    width: 15px;
-    height: 15px;
-}
-
-#buttontask2{
-    display: none;
-    position: absolute;
-    z-index: 4;
-    right: 45px;
-    bottom: -200px;
-}
-
-#buttontask2 button{
-
-    width: 380px;
-    background-color: white;
-    border: none;
-    border-radius: 8px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-#buttontask2 button:hover{
-    background-color: #3cd6e6;
-    opacity: 1;
-    color: black;
-}
-
-
 
 #formtext{
     display: none;
@@ -418,6 +368,10 @@ body{
     background-color: #3cd6e6;
     opacity: 1;
     color: black;
+}
+
+#formhome text{
+    font-size: 10px;
 }
 
 #formwork{
@@ -525,8 +479,8 @@ body{
 #formtravel{
     display: none;
     width: 470px;
-    height: 390px;
-    margin-top: 240px;
+    height: 415px;
+    margin-top: 218px;
     margin-left: 870px;
     position: absolute;
     z-index: 3;
@@ -539,7 +493,7 @@ body{
 
 #formtravel label{
     padding-left: 30px;
-    padding-right: 22px;
+    padding-right: 30px;
     clear: left;
     width:55px;
     text-align: right;
@@ -774,7 +728,7 @@ body{
     padding-top: 20px;
     clear: left;
     width:160px;
-    text-align: right;
+    text-align: center;
     font-size: 18px;
 }
 
@@ -798,13 +752,14 @@ body{
 
 #notifications{
     display: none;
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: auto;
     margin-top: 64px;
     margin-left: 75%;
     position: absolute;
-    z-index: 5;
+    z-index: 200;
     background: #3cd6e6;
+    overflow: scroll;
 }
 
 #notifications h2{
@@ -953,4 +908,825 @@ body{
 
 #cal #cal-frame table.curr {
     float:right;
+}
+
+#list1{
+    height: 500px;
+    width: 500px;
+    background: #3cd6e6;
+    position: absolute;
+    margin-left: 21%;
+    margin-top: 11%;
+    opacity: 0.4;
+}
+
+#text1{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    margin-left: 21%;
+    margin-top: 11%;
+
+}
+
+#text1 h1{
+    text-align: center;
+}
+
+#text1 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#text1 input{
+    float: left;
+    clear: both;
+}
+
+#list2{
+    height: 500px;
+    width: 500px;
+    background: #3cd6e6;
+    position: absolute;
+    margin-left: 61%;
+    margin-top: 11%;
+    opacity: 0.4;
+}
+
+#text2{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    margin-left: 61%;
+    margin-top: 11%;
+    text-align: center;
+}
+
+#text2 h1{
+    text-align: center;
+}
+
+#text2 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 15px;
+    font-size: 18px;
+}
+#text2 input{
+    float: left;
+    clear: both;
+}
+
+
+#dayone{
+     height: 230px;
+     width: 230px;
+     position: absolute;
+     background: #3cd6e6;
+     margin-top: 10%;
+     margin-left: 17%;
+     z-index: 3;
+     opacity: 0.4;
+    overflow: scroll;
+ }
+
+ #textone{
+     height: 230px;
+     width: 230px;
+     position: absolute;
+     margin-top: 10%;
+     margin-left: 17%;
+     z-index: 4;
+     overflow: scroll;
+     font-size: 17px;
+ }
+#textone input{
+    float: left;
+    clear: both;
+}
+
+ #textone h2{
+     text-align: center;
+ }
+
+ #textone ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+#daytwo{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    background: #3cd6e6;
+    margin-top: 10%;
+    margin-left: 37%;
+    z-index: 3;
+    opacity: 0.4;
+}
+
+#texttwo{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 37%;
+    z-index: 4;
+    text-align: center;
+    overflow: scroll;
+    font-size: 17px;
+}
+
+#texttwo input{
+    float: left;
+    clear: both;
+}
+
+ #texttwo h2{
+     text-align: center;
+ }
+
+ #texttwo ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+#daythree{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    background: #3cd6e6;
+    margin-top: 10%;
+    margin-left: 57%;
+    z-index: 3;
+    opacity: 0.4;
+}
+
+#textthree{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 57%;
+    z-index: 4;
+    text-align: center;
+    overflow: scroll;
+    font-size: 17px;
+}
+
+#textthree input{
+    float: left;
+    clear: both;
+}
+
+ #textthree h2{
+     text-align: center;
+ }
+
+ #textthree ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+#dayfour{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    background: #3cd6e6;
+    margin-top: 10%;
+    margin-left: 77%;
+    z-index: 3;
+    opacity: 0.4;
+}
+
+#textfour{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 77%;
+    z-index: 4;
+    text-align: center;
+    overflow: scroll;
+    font-size: 17px;
+}
+
+#textfour input{
+    float: left;
+    clear: both;
+}
+
+ #textfour h2{
+     text-align: center;
+ }
+
+ #textfour ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+#second{
+    display: inline-block;
+}
+
+#dayfive{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    background: #3cd6e6;
+    margin-top: 30%;
+    margin-left: 27%;
+    z-index: 3;
+    opacity: 0.4;
+}
+
+#textfive{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 27%;
+    z-index: 4;
+    text-align: center;
+    overflow: scroll;
+    font-size: 17px;
+}
+
+#textfive input{
+    float: left;
+    clear: both;
+}
+
+ #textfive h2{
+     text-align: center;
+ }
+
+ #textfive ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+#daysix{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    background: #3cd6e6;
+    margin-top: 30%;
+    margin-left: 47%;
+    z-index: 3;
+    opacity: 0.4;
+}
+
+#textsix{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 47%;
+    z-index: 4;
+    text-align: center;
+    overflow: scroll;
+    font-size: 17px;
+}
+
+#textsix input{
+    float: left;
+    clear: both;
+}
+
+ #textsix h2{
+     text-align: center;
+ }
+
+ #textsix ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+#dayseven{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    background: #3cd6e6;
+    margin-top: 30%;
+    margin-left: 67%;
+    z-index: 3;
+    opacity: 0.4;
+}
+
+#textseven{
+    height: 230px;
+    width: 230px;
+    position: absolute;
+    margin-top: 30%;
+    margin-left: 67%;
+    z-index: 4;
+    text-align: center;
+    overflow: scroll;
+    font-size: 17px;
+}
+
+#textseven input{
+    float: left;
+    clear: both;
+}
+
+ #textseven h2{
+     text-align: center;
+ }
+
+ #textseven ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+
+ }
+
+
+#dim{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity:0.6;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#focus1{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 40%;
+    background: #3cd6e6;
+    opacity: 1;
+    z-index: 11;
+}
+
+#focus1 h1{
+    text-align: center;
+}
+
+#focus1 input{
+    float: left;
+    clear: both;
+    margin-right: 10px;
+}
+
+#focus1 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#focus1 button {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#focus1 button:hover{
+    opacity: 1;
+    color: black;
+}
+
+#focus2{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 40%;
+    background: #3cd6e6;
+    opacity: 1;
+    z-index: 11;
+}
+
+#focus2 h1{
+    text-align: center;
+}
+
+#focus2 input{
+    float: left;
+    clear: both;
+    margin-right: 10px;
+}
+
+#focus2 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#focus2 button {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#focus2 button:hover{
+    opacity: 1;
+    color: black;
+}
+
+#focus3{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 40%;
+    background: #3cd6e6;
+    opacity: 1;
+    z-index: 11;
+}
+
+#focus3 h1{
+    text-align: center;
+}
+
+#focus3 input{
+    float: left;
+    clear: both;
+    margin-right: 10px;
+}
+
+#focus3 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#focus3 button {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#focus3 button:hover{
+    opacity: 1;
+    color: black;
+}
+
+#focus4{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 40%;
+    background: #3cd6e6;
+    opacity: 1;
+    z-index: 11;
+}
+
+#focus4 h1{
+    text-align: center;
+}
+
+#focus4 input{
+    float: left;
+    clear: both;
+    margin-right: 10px;
+}
+
+#focus4 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#focus4 button {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#focus4 button:hover{
+    opacity: 1;
+    color: black;
+}
+
+#focus5{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 40%;
+    background: #3cd6e6;
+    opacity: 1;
+    z-index: 11;
+}
+
+#focus5 h1{
+    text-align: center;
+}
+
+#focus5 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#focus5 input{
+    float: left;
+    clear: both;
+    margin-right: 10px;
+}
+
+#focus5 button {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#focus5 button:hover{
+    opacity: 1;
+    color: black;
+}
+
+#focus6{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 40%;
+    background: #3cd6e6;
+    opacity: 1;
+    z-index: 11;
+}
+
+#focus6 h1{
+    text-align: center;
+}
+
+#focus6 input{
+    float: left;
+    clear: both;
+    margin-right: 10px;
+}
+
+#focus6 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#focus6 button {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#focus6 button:hover{
+    opacity: 1;
+    color: black;
+}
+
+#focus7{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 10%;
+    margin-left: 40%;
+    background: #3cd6e6;
+    opacity: 1;
+    z-index: 11;
+}
+
+#focus7 h1{
+    text-align: center;
+}
+
+#focus7 input{
+    float: left;
+    clear: both;
+    margin-right: 10px;
+}
+
+#focus7 ul li{
+    list-style-type: none;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#focus7 button {
+    margin-top: 2%;
+    margin-left: 2%;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#focus7 button:hover{
+    opacity: 1;
+    color: black;
+}
+
+#sign{
+    float: right;
+}
+
+#sign ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+#sign ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 18px;
+    cursor: pointer;
+    font-size: 18pt;
+}
+
+#sign ul li a:hover{
+    text-decoration: underline;
+    color: #3cd6e6;
+}
+
+#loginlist{
+    display: none;
+    width: 470px;
+    height: 200px;
+    background: #3cd6e6;
+    margin-top: 4.3%;
+    margin-left: 70%;
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+}
+
+#login{
+    display: none;
+    width: 470px;
+    height: 200px;
+    margin-top: 4.3%;
+    margin-left: 70%;
+    position: absolute;
+    z-index: 3;
+    padding-top: 25px;
+}
+
+#login input, label{
+    float: left;
+}
+
+#login label{
+    padding-left: 30px;
+    padding-right: 30px;
+    clear: left;
+    width:55px;
+    text-align: right;
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+#login input{
+    border: none;
+    border-bottom: 2px solid black;
+    background: none;
+    margin-top: 15px;
+    width: 60%;
+}
+
+#login button{
+    position: absolute;
+    right: 58px;
+    bottom: 60px;
+    width: 380px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#login button:hover{
+    background-color: white;
+    opacity: 0.4;
+    color: black;
+}
+
+#formsignuplist{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #3cd6e6;
+    opacity: 0.4;
+    margin-top: 150px;
+    margin-left: 400px;
+    z-index: 2;
+}
+
+#formsignup{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-top: 200px;
+    margin-left: 400px;
+    z-index: 3;
+    font-size: 22px;
+}
+
+#formsignup label, input{
+    float: left;
+}
+
+#formsignup label{
+    padding-left: 30px;
+    padding-right: 30px;
+    clear: left;
+    width:100px;
+    text-align: right;
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+#formsignup input{
+    border: none;
+    border-bottom: 2px solid black;
+    background: none;
+    margin-top: 15px;
+    width: 55%;
+}
+
+#formsignup button{
+    position: absolute;
+    right: 58px;
+    bottom: 90px;
+    width: 380px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#formsignup button:hover{
+    background-color: #3cd6e6;
+    opacity: 1;
+    color: black;
+}
+
+#formsignup h1{
+    text-align: center;
 }

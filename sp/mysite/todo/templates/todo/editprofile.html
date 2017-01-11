@@ -1,0 +1,13 @@
+{% extends 'todo/base.html' %}
+
+{% block main %}
+    <div id="formsignuplist"></div>
+    <div id="formsignup">
+        <h1>UPDATE PROFILE:</h1>
+        <form method="post" action="{% url 'todo:updateUser' user.id%}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" name="editp">Update</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,295 +1,104 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% extends "todo/base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>TO-DO</title>
-    <link rel="stylesheet" href="{% static 'todo/style.css' %}">
-    <script src="{% static 'todo/functions.js' %}"></script>
-
-</head>
-<body>
-    <div id="band">
-        <a href="index.html"><img src="{% static 'todo/images/logo2_2.png' %}" alt="logo" /></a>
-        <div id="menu">
-            <ul>
-                <li><a href="Notifications" onclick="return showNotifications(this)"><img src="{% static 'todo/images/alarm.png' %}" alt="logo" /></a> </li>
-                <li><a href="Calendar" onclick="return showCalendar(this); return CALENDAR();"><img src="{% static 'todo/images/calendar.png' %}" alt="logo" /></a> </li>
-                <li><a href="User" onclick="return showUser(this)"><img src="{% static 'todo/images/user.png' %}" alt="logo" /></a> </li>
-            </ul>
-        </div>
-
-    </div>
-
-
-    <div id="sidemenuband">
-        <div id="sidemenu">
-            <ul>
-                <li><a href="index.html">Today</a></li>
-                <li><a href="next7days.html">Next 7 days</a> </li>
-                <li><a href="">  </a></li>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="work.html">Work</a> </li>
-                <li><a href="personal.html">Personal</a> </li>
-                <li><a href="travel.html">Travel</a> </li>
-                <li><a href="shopping.html">Shopping</a> </li>
-                <li><a href="birthday.html">Birthday</a> </li>
-                <li><a href="cooking.html">Cooking</a> </li>
-            </ul>
-        </div>
-    </div>
-
+{% block main %}
+    {% load static %}
     <div id="content">
-       <!--<img src="pictures/ozadje.png" alt="ozadje">-->
-        <div id="list"></div>
-        <div id="things">
-            <ul>
-                <li><h1>THINGS TO DO:</h1></li>
-            </ul>
-            <button type="button" onclick="showFormList(); hidetasks();" >Add new task:</button><br>
-        </div>
-        <div id="tasks">
-            <p><input type="checkbox"><a href="#" onclick="return showtask1(this)">Write the essay</a></p>
-            <p><input type="checkbox"><a href="#" onclick="return showtask2(this)">Bake the cake</a></p>
-        </div>
+           <!--<img src="pictures/ozadje.png" alt="ozadje">-->
+            <div id="list"></div>
+            <div id="things">
+                <h1>THINGS TO DO:</h1>
+                <button type="button" onclick="showFormList(); hidetasks();" >Add new task:</button><br>
+                <ul>
+                    {% for task in tasks_today %}
+                        <li><form method="POST" action="{% url 'todo:complete' task.id %}">
+                                {% csrf_token %}
+                                <input type="checkbox" name="compl" value="{{ task.name }}" onchange="submit()"
+                                {% if task.completed == True %}checked {% endif %}>
+                            </form>
+                            <a href="{% url 'todo:details' task.id %}" >{{ task.name }}</a>
+                        </li>
+                {% endfor %}
+                </ul>
 
-
-    </div>
-
-    <div id="task1">
-        <button type="button" onclick="hideFormList()">Back</button>
-        <button type="button" onclick="edit1()"><img src="{% static 'todo/images/pen.png' %}" alt="logo" /></button>
-        <h1>TASK:</h1>
-        <label for="category1">Category:</label>
-        <select id="category1" disabled>
-            <option value="select">Select:</option>
-            <option value="home">Home</option>
-            <option value="work" selected>Work</option>
-            <option value="personal">Personal</option>
-            <option value="travel">Travel</option>
-            <option value="shopping">Shopping</option>
-            <option value="birthday">Birthday</option>
-            <option value="cooking">Cooking</option>
-        </select>
-        <label for="namework1">Name:</label>
-        <input id="namework1" type="text" value="Write the essay" disabled>
-        <label for="whenwork1">When:</label>
-        <input id="whenwork1" type="date" value="2016-11-29">
-        <label for="infowork1">Info:</label>
-        <textarea id="infowork1" rows="4" disabled>Write 2 pages about html and css programming.</textarea>
-        <label for="mailwork1">Mails:</label>
-        <input id="mailwork1" type="email" disabled>
-        <label for="coworkers1">Co-workers:</label>
-        <input id="coworkers1" type="text" disabled>
-        <label for="alarmwork1">Alarm:</label>
-        <input id="alarmwork1" type="checkbox" checked>
-        <div id="buttontask1">
-            <button type="button" onclick="confirmtask1()">Confirm</button>
-        </div>
-    </div>
-
-    <div id="task2">
-        <button type="button" onclick="hideFormList()">Back</button>
-        <button type="button" onclick="edit2()"><img src="{% static 'todo/images/pen.png' %}" alt="logo" /></button>
-        <h1>TASK:</h1>
-        <label for="category2">Category:</label>
-        <select id="category2" disabled>
-            <option value="select">Select:</option>
-            <option value="home">Home</option>
-            <option value="work">Work</option>
-            <option value="personal">Personal</option>
-            <option value="travel">Travel</option>
-            <option value="shopping">Shopping</option>
-            <option value="birthday">Birthday</option>
-            <option value="cooking" selected>Cooking</option>
-        </select>
-        <label for="namecooking2">Name:</label>
-        <input id="namecooking2" type="text" value="Bake the cake" disabled>
-        <label for="whencooking2">When:</label>
-        <input id="whencooking2" type="date" value="2016-11-29" disabled>
-        <label for="ingredientscooking2">Ingredients:</label>
-        <textarea id="ingredientscooking2" rows="10" disabled> 2 1/2 c. cake flour
-        1 1/4 tsp. baking powder
-        3/4 tsp. salt
-        1/2 tsp. baking soda
-        3/4 c. butter
-        1 1/2 c. sugar
-        2 tbsp. sugar
-        1 c. strawberry preserves
-        4 eggs
-        3/4 tsp. vanilla extract
-        1/4 tsp. red food coloring
-        1/2 c. Buttermilk
-        1 3/4 c. heavy cream
-        1 1/2 pt. strawberries</textarea>
-        <label for="makecooking2">How to make it:</label>
-        <textarea id="makecooking2" rows="10" disabled>Bake the cake: Preheat oven to 350 degrees F. Line two 9-inch cake pans with parchment paper. Lightly coat the pan with butter, dust with flour, and tap out excess. Set aside. Sift the flour, baking powder, salt, and baking soda together and set aside. Cream the butter and 1 1/2 cups sugar until light and fluffy in a large bowl using a mixer set at medium-high speed. Add 3/4 cup preserves and the eggs, one at a time, blending each addition thoroughly. Scrape down sides of bowl and beat in vanilla extract and the food coloring. Reduce mixer speed to low and add the flour mixture by thirds, alternating with the buttermilk and ending with a final addition of the dry ingredients. Divide the batter equally between the pans and spread evenly. Bake on the middle rack of oven until a tester inserted in the center of each cake layer comes out clean -- about 20 to 30 minutes. Cool completely on a wire rack.
-Assemble the cake:Beat the cream and remaining sugar to soft peaks and spread over the top of one layer. (Wrap and freeze the remaining layer for up to 2 months.) Top with strawberries and drizzle with remaining preserves. Serve immediately.</textarea>
-        <label for="alarmcooking2">Alarm:</label>
-        <input id="alarmcooking2" type="checkbox" disabled>
-
-        <div id="buttontask2">
-            <button type="button" onclick="confirmtask2()">Confirm</button>
-        </div>
-    </div>
-
-        <div id="formlist"></div>
-        <div id="formtext">
-            <button type="button" onclick="hideFormList()">Back</button>
-            <h1>TASK:</h1>
-            <label for="category">Category:</label>
-            <select id="category" name="category" onchange="showForm(this)">
-                <option value="select">Select:</option>
-                <option value="home">Home</option>
-                <option value="work">Work</option>
-                <option value="personal">Personal</option>
-                <option value="travel">Travel</option>
-                <option value="shopping">Shopping</option>
-                <option value="birthday">Birthday</option>
-                <option value="cooking">Cooking</option>
-            </select>
-        </div>
-
-        <div id="formhome">
-            <label for="namehome">Name:</label>
-            <input id="namehome" type="text">
-            <label for="whenhome">When:</label>
-            <input id="whenhome" type="date">
-            <label for="infohome">Info:</label>
-            <textarea id="infohome" rows="4"></textarea>
-            <label for="alarmhome">Alarm:</label>
-            <input id="alarmhome" type="checkbox">
-            <button id="addhome" type="button">Add to list</button>
-        </div>
-
-        <div id="formwork">
-            <label for="namework">Name:</label>
-            <input id="namework" type="text">
-            <label for="whenwork">When:</label>
-            <input id="whenwork" type="date">
-            <label for="infowork">Info:</label>
-            <textarea id="infowork" rows="4"></textarea>
-            <label for="mailwork">Mails:</label>
-            <input id="mailwork" type="email">
-            <label for="coworkers">Co-workers:</label>
-            <input id="coworkers" type="text">
-            <label for="alarmwork">Alarm:</label>
-            <input id="alarmwork" type="checkbox">
-            <button id="addwork" type="button">Add to list</button>
-        </div>
-
-        <div id="formpersonal">
-            <label for="namepersonal">Name:</label>
-            <input id="namepersonal" type="text">
-            <label for="whenpersonal">When:</label>
-            <input id="whenpersonal" type="date">
-            <label for="infopersonal">Info:</label>
-            <textarea id="infopersonal" rows="4"></textarea>
-            <label for="alarmpersonal">Alarm:</label>
-            <input id="alarmpersonal" type="checkbox">
-            <button id="addpersonal" type="button">Add to list</button>
-        </div>
-
-        <div id="formtravel">
-            <label for="nametravel">Name:</label>
-            <input id="nametravel" type="text">
-            <label for="fromtravel">From:</label>
-            <input id="fromtravel" type="date">
-            <label for="totravel">To:</label>
-            <input id="totravel" type="date">
-            <label for="wheretravel">Where:</label>
-            <input id="wheretravel" type="text">
-            <label for="packtravel">Pack:</label>
-            <textarea id="packtravel" rows="4"></textarea>
-            <label for="dontforgettravel">Don't forget:</label>
-            <textarea id="dontforgettravel" rows="4"></textarea>
-            <label for="alarmpersonal">Alarm:</label>
-            <input id="alarmtravel" type="checkbox">
-            <button id="addtravel" type="button">Add to list</button>
-        </div>
-
-        <div id="formshopping">
-            <label for="nameshopping">Name:</label>
-            <input id="nameshopping" type="text">
-            <label for="whenshopping">When:</label>
-            <input id="whenshopping" type="date">
-            <label for="whatshopping">What to buy:</label>
-            <textarea id="whatshopping" rows="10"></textarea>
-            <label for="alarmshopping">Alarm:</label>
-            <input id="alarmshopping" type="checkbox">
-            <button id="addshopping" type="button">Add to list</button>
-        </div>
-
-        <div id="formbirthday">
-            <label for="namebirthday">Name:</label>
-            <input id="namebirthday" type="text">
-            <label for="whenbirthday">When:</label>
-            <input id="whenbirthday" type="date">
-            <label for="ideasbirthday">Present ideas:</label>
-            <textarea id="ideasbirthday" rows="10"></textarea>
-            <label for="alarmbirthday">Alarm:</label>
-            <input id="alarmbirthday" type="checkbox">
-            <button id="addbirthday" type="button">Add to list</button>
-        </div>
-
-        <div id="formcookinglist"></div>
-        <div id="formcooking">
-            <label for="namecooking">Name:</label>
-            <input id="namecooking" type="text">
-            <label for="whencooking">When:</label>
-            <input id="whencooking" type="date">
-            <label for="ingredientscooking">Ingredients:</label>
-            <textarea id="ingredientscooking" rows="10"></textarea>
-            <label for="makecooking">How to make it:</label>
-            <textarea id="makecooking" rows="10"></textarea>
-            <label for="alarmcooking">Alarm:</label>
-            <input id="alarmcooking" type="checkbox">
-            <button id="addcooking" type="button">Add to list</button>
-        </div>
-
-        <div id="userlist"></div>
-        <div id="user">
-            <label>Name and surname</label><br>
-            <button id="buttonlogin" type="button" onClick="parent.location='userprofile.html'" >Edit profile</button><br>
-            <button id="logout" type="button" onClick="parent.location='main.html'">Log out</button>
-        </div>
-
-    <div id="notifications">
-        <h2>Notifications:</h2>
-        <p><img src="{% static 'todo/images/clock.png' %}" alt="clock"> Alarm: Write the essay till 29-11-2016</p>
-        <p><img src="{% static 'todo/images/clock.png' %}" alt="clock"> Unfinished tasks (2) from 2 days ago</p>
-    </div>
-
-    <div id="calendar">
-        <div id="cal">
-            <div class="header">
-                <span class="left button" id="prev"> &lang; </span>
-                <span class="month-year" id="label"> November 2016 </span>
-                <span class="right button" id="next"> &rang; </span>
             </div>
-            <table id="days">
-                <tr>
-                    <td>sun</td>
-                    <td>mon</td>
-                    <td>tue</td>
-                    <td>wed</td>
-                    <td>thu</td>
-                    <td>fri</td>
-                    <td>sat</td>
-                </tr>
-            </table>
-            <div id="cal-frame">
-                <table class="curr">
-                    <tr><td class="nil"></td><td class="nil"></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-                    <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td >11</td><td>12</td></tr>
-                    <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-                    <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
-                    <tr><td>27</td><td>28</td><td class="today">29</td><td>30</td><td class="nil"></td><td class="nil"></td><td class="nil"></td></tr>
-                </table>
-            </div>
-        </div>
-    </div>
 
-</body>
-</html>
+        </div>
+
+
+
+            <div id="formlist"></div>
+            <div id="formtext">
+                <button type="button" onclick="hideFormList()">Back</button>
+                <h1>TASK:</h1>
+                <label for="category">Category:</label>
+                <select id="category" name="category" onchange="showForm(this)">
+                    <option value="select">Select:</option>
+                    <option value="home">Home</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="travel">Travel</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="cooking">Cooking</option>
+                </select>
+            </div>
+
+            <div id="formhome">
+                <form method='POST' action="" class="hform">
+                    {% csrf_token %}
+                    {{ formh.as_p }}
+                    <button type="submit" name="addhome" >Add Task</button>
+                </form>
+
+            </div>
+
+            <div id="formwork">
+                <form method='POST' action="" class="wform">
+                    {% csrf_token %}
+                    {{ formw.as_p }}
+                    <button type="submit" name="addwork" >Add Task</button>
+                </form>
+            </div>
+
+            <div id="formpersonal">
+                <form method='POST' action="" class="pform">
+                    {% csrf_token %}
+                    {{ formp.as_p }}
+                    <button type="submit" name="addpersonal" >Add Task</button>
+                </form>
+            </div>
+
+            <div id="formtravel">
+                <form method='POST' action="" class="tform">
+                    {% csrf_token %}
+                    {{ formt.as_p }}
+                    <button type="submit" name="addtravel" >Add Task</button>
+                </form>
+            </div>
+
+            <div id="formshopping">
+                <form method='POST' action="" class="sform">
+                    {% csrf_token %}
+                    {{ forms.as_p }}
+                    <button type="submit" name="addshopping" >Add Task</button>
+                </form>
+            </div>
+
+            <div id="formbirthday">
+                <form method='POST' action="" class="bform">
+                    {% csrf_token %}
+                    {{ formb.as_p }}
+                    <button type="submit" name="addbirthday" >Add Task</button>
+                </form>
+            </div>
+
+            <div id="formcookinglist"></div>
+            <div id="formcooking">
+                <form method='POST' action="" class="cform">
+                    {% csrf_token %}
+                    {{ formc.as_p }}
+                    <button type="submit" name="addcooking" >Add Task</button>
+                </form>
+            </div>
+
+{% endblock %}

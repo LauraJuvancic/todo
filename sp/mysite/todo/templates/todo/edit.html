@@ -1,0 +1,30 @@
+{% extends 'todo/base.html' %}
+{% block main %}
+    {% load static %}
+        <div id="list"></div>
+        <div id="things1">
+            <div id="head">
+                <span><a href="{% url 'todo:delete' t.id %}" onclick="return confirm('Are you sure you want to delete task: {{ t.name }}?')">
+                    <img src="{% static 'todo/images/remove.png' %}" alt="logo" /></a></span>
+                <span><h1>Edit:</h1></span>
+            </div>
+
+
+            <form method="POST" action="/todo/update/{{ t.id }}/">
+                {% csrf_token %}
+                <label for="category">Category:</label>
+                <select id="category" name="category" >
+                    {% for opt in options %}
+                        {% if t.category == opt %}
+                            <option value="{{ opt }}" selected>{{ opt }}</option>
+                        {% else %}
+                            <option value="{{ opt }}">{{ opt }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                {{ form.as_p}}
+                <button type="submit" name="update">Update</button>
+            </form>
+
+        </div>
+{% endblock %}
