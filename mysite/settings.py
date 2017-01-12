@@ -27,7 +27,7 @@ SECRET_KEY = 'k@y_72i$bqb5k$klzms$u4f_=w=xh%zt9&oyf-oufxaoc7l+%!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['agile-shore-66155.herokuapp.com']
+ALLOWED_HOSTS = ['agile-shore-66155.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'staticfiles')
+STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
