@@ -61,11 +61,11 @@
     <div id="userlist"></div>
     <div id="user">
         <label>{{ user.first_name }} {{ user.last_name }}</label><br>
-        <form action="user/{{ user.id }}" >
+        <form action="/user/{{ user.id }}" >
             <button id="buttoneditprofile" type="submit"  >Edit profile</button><br>
         </form>
 
-        <form action="logout/" >
+        <form action="/logout/" >
             <button id="logout" type="submit" name="logout">Log out</button>
         </form>
 

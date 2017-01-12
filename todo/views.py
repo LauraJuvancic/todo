@@ -33,7 +33,7 @@ def first(request):
 
     return render(request, 'todo/base.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def index(request):
     context = {}
 
@@ -156,7 +156,7 @@ def index(request):
 
     return render(request, 'todo/index.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def home(request):
     context = {}
 
@@ -172,7 +172,7 @@ def home(request):
 
     return render(request, 'todo/details.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def work(request):
     context = {}
 
@@ -188,7 +188,7 @@ def work(request):
                                              alarm=True, completed=False)
     return render(request, 'todo/details.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def personal(request):
     context = {}
 
@@ -205,7 +205,7 @@ def personal(request):
 
     return render(request, 'todo/details.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def travel(request):
     context = {}
 
@@ -222,7 +222,7 @@ def travel(request):
 
     return render(request, 'todo/details.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def shopping(request):
     context = {}
 
@@ -239,6 +239,7 @@ def shopping(request):
 
     return render(request, 'todo/details.html', context)
 
+@login_required(login_url='')
 def birthday(request):
     context = {}
 
@@ -255,7 +256,7 @@ def birthday(request):
 
     return render(request, 'todo/details.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def cooking(request):
     context = {}
 
@@ -271,7 +272,7 @@ def cooking(request):
                                              alarm=True, completed=False)
     return render(request, 'todo/details.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def days(request):
     context={}
 
@@ -292,7 +293,7 @@ def days(request):
 
     return render(request, 'todo/7days.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def showDetails(request, idt):
     context={}
 
@@ -463,7 +464,7 @@ def updateView(request, idt):
 
     return render(request, 'todo/edit.html', context)
 
-@login_required(login_url='/todo')
+@login_required(login_url='')
 def deleteView(request, idt):
     t = Tasks.objects.get(id=idt)
     cat = t.category
@@ -487,7 +488,7 @@ def deleteView(request, idt):
     return HttpResponseRedirect(reverse('todo:index'))
 
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def completeTask(request, idt):
     t = Tasks.objects.get(id=idt)
     c = request.POST.get('compl', 0)
@@ -508,12 +509,12 @@ def completeTask(request, idt):
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse('todo:first'))
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def signup(request):
     context={}
 
@@ -530,7 +531,7 @@ def signup(request):
     context['form'] = formSignup()
     return render(request, 'todo/signup.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def showUser(request, idu):
     context={}
     form = formEditprofile(data=model_to_dict(User.objects.get(id=idu)))
@@ -544,7 +545,7 @@ def showUser(request, idu):
                                              alarm=True, completed=False)
     return render(request, 'todo/editprofile.html', context)
 
-@login_required(login_url='/todo/')
+@login_required(login_url='')
 def updateUser(request, idu):
     context={}
 
