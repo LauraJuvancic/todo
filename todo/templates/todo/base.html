@@ -12,7 +12,7 @@
 <body>
     {% if user.is_authenticated %}
         <div id="band">
-            <a href="/todo/Homepage/"><img src="{% static 'todo/images/logo2_2.png' %}" alt="logo" /></a>
+            <a href="/Homepage/"><img src="{% static 'todo/images/logo2_2.png' %}" alt="logo" /></a>
             <div id="menu">
                 <ul>
                     <li><a href="Notifications" onclick="return showNotifications(this)"><img src="{% static 'todo/images/alarm.png' %}" alt="logo" /></a> </li>
@@ -24,16 +24,16 @@
         <div id="sidemenuband">
         <div id="sidemenu">
             <ul>
-                <li><a href="/todo/Homepage/">Today</a></li>
-                <li><a href="/todo/7days/">Next 7 days</a> </li>
+                <li><a href="/Homepage/">Today</a></li>
+                <li><a href="/7days/">Next 7 days</a> </li>
                 <li><a href="">  </a></li>
-                <li><a href="/todo/Home/">Home </a></li>
-                <li><a href="/todo/Work/">Work</a> </li>
-                <li><a href="/todo/Personal/">Personal</a> </li>
-                <li><a href="/todo/Travel/">Travel</a> </li>
-                <li><a href="/todo/Shopping/">Shopping</a> </li>
-                <li><a href="/todo/Birthday/">Birthday</a> </li>
-                <li><a href="/todo/Cooking/">Cooking</a> </li>
+                <li><a href="/Home/">Home </a></li>
+                <li><a href="/Work/">Work</a> </li>
+                <li><a href="/Personal/">Personal</a> </li>
+                <li><a href="/Travel/">Travel</a> </li>
+                <li><a href="/Shopping/">Shopping</a> </li>
+                <li><a href="/Birthday/">Birthday</a> </li>
+                <li><a href="/Cooking/">Cooking</a> </li>
             </ul>
         </div>
         </div>
@@ -43,7 +43,7 @@
         </section>
     {% else %}
         <div id="band">
-            <a href="/todo/"><img src="{% static 'todo/images/logo2_2.png' %}" alt="logo" /></a>
+            <a href=""><img src="{% static 'todo/images/logo2_2.png' %}" alt="logo" /></a>
 
             <div id="sign">
                 <ul>
@@ -61,11 +61,11 @@
     <div id="userlist"></div>
     <div id="user">
         <label>{{ user.first_name }} {{ user.last_name }}</label><br>
-        <form action="/todo/user/{{ user.id }}" >
+        <form action="user/{{ user.id }}" >
             <button id="buttoneditprofile" type="submit"  >Edit profile</button><br>
         </form>
 
-        <form action="/todo/logout/" >
+        <form action="logout/" >
             <button id="logout" type="submit" name="logout">Log out</button>
         </form>
 

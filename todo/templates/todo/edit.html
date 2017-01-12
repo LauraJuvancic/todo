@@ -10,7 +10,7 @@
             </div>
 
 
-            <form method="POST" action="/todo/update/{{ t.id }}/">
+            <form method="POST" action="/update/{{ t.id }}/">
                 {% csrf_token %}
                 <label for="category">Category:</label>
                 <select id="category" name="category" >
