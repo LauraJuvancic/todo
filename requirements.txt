@@ -4,5 +4,5 @@ forms-extras==0.1.1
 html5forms==0.0.3
 MarkupSafe==0.23
 Solution==5.3.7
-vboxapi==1.0
 virtualenv==15.1.0
+Flask==0.7.2
