@@ -16,5 +16,4 @@ six==1.10.0
 snowballstemmer==1.2.1
 Solution==5.3.7
 Sphinx==1.5.1
-vboxapi==1.0
 virtualenv==15.1.0
