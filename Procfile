@@ -1,9 +1,1 @@
-Django==1.10.4
-django-html5==1.0.0
-forms-extras==0.1.1
-html5forms==0.0.3
-MarkupSafe==0.23
-pytz==2016.10
-Solution==5.3.7
-vboxapi==1.0
-virtualenv==15.1.0
+web: python app.py
