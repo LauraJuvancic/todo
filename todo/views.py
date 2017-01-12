@@ -514,7 +514,7 @@ def logout_user(request):
     logout(request)
     return HttpResponseRedirect(reverse('todo:first'))
 
-@login_required(login_url='')
+
 def signup(request):
     context={}
 
