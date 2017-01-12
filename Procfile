@@ -1,1 +1,1 @@
-web: python todo.py
+web: gunicorn gettingstarted.wsgi
