@@ -1,9 +1,10 @@
 {% extends 'todo/base.html' %}
+
 {% block sign %}
     <div id="formsignuplist"></div>
     <div id="formsignup">
         <h1>SIGN UP</h1>
-        <form method="post" action="{% url 'todo:signup' %}">
+        <form method="post" action="{% url 'todo:signup' %}" name="signup">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit" name="signup">Sign up</button>

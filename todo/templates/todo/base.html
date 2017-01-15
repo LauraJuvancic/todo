@@ -90,9 +90,9 @@
         {% if form.errors %}
             <p>Your username and password didn't match. Please try again.</p>
         {% endif %}
-        <form method='POST' action="{% url 'todo:first' %}" class="lform">
+        <form method='POST' action="{% url 'todo:first' %}" name="login" class="lform">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ forml.as_p }}
             <button type="submit" name="Login" >Log in</button>
         </form>
     </div>

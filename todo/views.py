@@ -17,9 +17,9 @@ def first(request):
     context = {}
 
     if request.method == 'POST':
-        form = formLogin(request.POST)
-        if form.is_valid():
-            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
+        forml = formLogin(request.POST)
+        if forml.is_valid():
+            user = authenticate(username=forml.cleaned_data['username'], password=forml.cleaned_data['password'])
             login(request, user)
             return HttpResponseRedirect('Homepage/')
         else:
@@ -529,6 +529,8 @@ def signup(request):
             return HttpResponseRedirect(reverse('todo:index'))
 
     context['form'] = formSignup()
+    context['forml'] = formLogin()
+
     return render(request, 'todo/signup.html', context)
 
 @login_required(login_url='')
