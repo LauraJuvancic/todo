@@ -109,7 +109,7 @@ body{
 }
 
 #list{
-    width: 30%;
+    width: 500px;
     height: 500px;
     background: #3cd6e6;
     margin-top: 130px;
@@ -121,7 +121,6 @@ body{
 }
 
 #things{
-    background: #3cd6e6;
     margin-top: 130px;
     margin-left: 300px;
     width: 500px;
