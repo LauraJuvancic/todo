@@ -15,19 +15,15 @@ from datetime import timedelta
 
 def first(request):
     context = {}
-
+    context['forml'] = formLogin()
     if request.method == 'POST':
         forml = formLogin(request.POST)
-
         if forml.is_valid():
             user = authenticate(username=forml.cleaned_data['username'], password=forml.cleaned_data['password'])
-            login(request, user)
-            return HttpResponseRedirect('Homepage/')
-        else:
-            return HttpResponse("Drek")
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect('Homepage/')
 
-
-    context['forml'] =formLogin()
 
     if request.user.is_authenticated:
         return HttpResponseRedirect('Homepage/')
@@ -533,8 +529,9 @@ def signup(request):
         elif request.POST.get("login"):
             if forml.is_valid():
                 user = authenticate(username=forml.cleaned_data['username'], password=forml.cleaned_data['password'])
-                login(request, user)
-                return HttpResponseRedirect('Homepage/')
+                if user is not None:
+                    login(request, user)
+                    return HttpResponseRedirect('Homepage/')
 
     context['form'] = formSignup()
     context['forml'] = formLogin()

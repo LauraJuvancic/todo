@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bc06063-6744-45a8-9193-52c90d948fa2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo/templates/todo/base.html" afterPath="$PROJECT_DIR$/todo/templates/todo/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo/views.py" afterPath="$PROJECT_DIR$/todo/views.py" />
     </list>
     <ignored path="Seznam-opravil-To-Do-.iws" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo/templates/todo/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+            <state relative-caret-position="1320">
+              <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -46,8 +48,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+            <state relative-caret-position="516">
+              <caret line="533" column="60" selection-start-line="533" selection-start-column="60" selection-end-line="533" selection-end-column="60" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -143,9 +145,9 @@
         <option value="$PROJECT_DIR$/todo/templates/todo/signup.html" />
         <option value="$PROJECT_DIR$/todo/templates/todo/index.html" />
         <option value="$PROJECT_DIR$/todo/static/todo/style.css" />
-        <option value="$PROJECT_DIR$/todo/templates/todo/base.html" />
         <option value="$PROJECT_DIR$/static/todo/style.css" />
         <option value="$PROJECT_DIR$/mysite/static/todo/style.css" />
+        <option value="$PROJECT_DIR$/todo/templates/todo/base.html" />
         <option value="$PROJECT_DIR$/todo/views.py" />
       </list>
     </option>
@@ -745,28 +747,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todo/templates/todo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo/templates/todo/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -803,10 +787,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/todo/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo/templates/todo/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="88" column="20" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/todo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+        <state relative-caret-position="516">
+          <caret line="533" column="60" selection-start-line="533" selection-start-column="60" selection-end-line="533" selection-end-column="60" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
