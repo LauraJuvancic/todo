@@ -18,12 +18,14 @@ def first(request):
 
     if request.method == 'POST':
         forml = formLogin(request.POST)
-        if forml.is_valid():
-            user = authenticate(username=forml.cleaned_data['username'], password=forml.cleaned_data['password'])
-            login(request, user)
-            return HttpResponseRedirect('Homepage/')
-        else:
-            return HttpResponse("Drek")
+
+        if request.POST.get("login"):
+            if forml.is_valid():
+                user = authenticate(username=forml.cleaned_data['username'], password=forml.cleaned_data['password'])
+                login(request, user)
+                return HttpResponseRedirect('Homepage/')
+            else:
+                return HttpResponse("Drek")
 
 
     context['forml'] =formLogin()
