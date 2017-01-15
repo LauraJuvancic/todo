@@ -114,7 +114,6 @@ body{
     background: #3cd6e6;
     margin-top: 130px;
     margin-left: 300px;
-    position: absolute;
     z-index: 2;
     opacity: 0.4;
 
@@ -125,7 +124,6 @@ body{
     margin-left: 300px;
     width: 500px;
     height: 500px;
-    position: absolute;
     z-index: 3;
     overflow: scroll;
 }
