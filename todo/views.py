@@ -520,13 +520,20 @@ def signup(request):
 
     if request.method == 'POST':
         form = formSignup(request.POST)
-        if form.is_valid():
-            usr = User.objects.create_user(username=form.cleaned_data['username'], first_name=form.cleaned_data['first_name'],
-                                           last_name=form.cleaned_data['last_name'], email=form.cleaned_data['email'],
-                                           password=form.cleaned_data['password'])
+        forml = formLogin(request.POST)
+        if request.POST.get("signup"):
+            if form.is_valid():
+                usr = User.objects.create_user(username=form.cleaned_data['username'], first_name=form.cleaned_data['first_name'],
+                                               last_name=form.cleaned_data['last_name'], email=form.cleaned_data['email'],
+                                               password=form.cleaned_data['password'])
 
-            login(request, usr)
-            return HttpResponseRedirect(reverse('todo:index'))
+                login(request, usr)
+                return HttpResponseRedirect(reverse('todo:index'))
+        elif request.POST.get("login"):
+            if forml.is_valid():
+                user = authenticate(username=forml.cleaned_data['username'], password=forml.cleaned_data['password'])
+                login(request, user)
+                return HttpResponseRedirect('Homepage/')
 
     context['form'] = formSignup()
     context['forml'] = formLogin()
