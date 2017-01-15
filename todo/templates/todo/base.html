@@ -87,7 +87,7 @@
 
     <div id="loginlist"></div>
     <div id="login">
-        {% if form.errors %}
+        {% if forml.errors %}
             <p>Your username and password didn't match. Please try again.</p>
         {% endif %}
         <form method='POST' action="{% url 'todo:first' %}" name="login" class="lform">

@@ -26,7 +26,7 @@ def first(request):
             return HttpResponse("Drek")
 
 
-    context['form'] =formLogin()
+    context['forml'] =formLogin()
 
     if request.user.is_authenticated:
         return HttpResponseRedirect('Homepage/')
